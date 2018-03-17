@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context="com.example.android.musicalstructureapp.MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/my_favourite_songs"
+        android:src="@drawable/myfavorite" />
+
+
+    <TextView
+
+        android:id="@+id/love_songs"
+        style="@style/CategoryStyle"
+        android:background="@color/category_love_songs_color"
+        android:text="@string/love_songs" />
+
+    <TextView
+
+        android:id="@+id/rock_songs"
+        style="@style/CategoryStyle"
+        android:background="@color/category_rock_songs_color"
+        android:text="@string/rock_songs" />
+
+</LinearLayout>
