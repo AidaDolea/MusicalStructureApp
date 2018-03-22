@@ -1,36 +1,39 @@
 package com.example.android.musicalstructureapp;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView love_songs = findViewById(R.id.love_songs);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
-        love_songs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent love_songs_intent = new Intent(MainActivity.this, LoveSongs.class);
-                startActivity(love_songs_intent);
-            }
-        });
+        // Create an adapter that knows which fragment should be shown on each page
+        SongsFragmentPagerAdapter adapter = new SongsFragmentPagerAdapter(this, getSupportFragmentManager());
 
-        TextView rock_songs = findViewById(R.id.rock_songs);
+        // Set the adapter onto the view pager
+        viewPager.setAdapter(adapter);
+        // Find the tab layout that shows the tabs
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 
-        rock_songs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent rock_songs_intent = new Intent(MainActivity.this, RockSongs.class);
-                startActivity(rock_songs_intent);
-            }
-        });
+        // Connect the tab layout with the view pager. This will
+        //   1. Update the tab layout when the view pager is swiped
+        //   2. Update the view pager when a tab is selected
+        //   3. Set the tab layout's tab names with the view pager's adapter's titles
+        //      by calling onPageTitle()
+        tabLayout.setupWithViewPager(viewPager);
+
     }
 }

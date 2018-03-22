@@ -45,4 +45,7 @@
     <string name="pearl_jam_song">Alive</string>
     <string name="pink_floyd">Pink Floyd</string>
     <string name="pink_floyd_song">Money</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

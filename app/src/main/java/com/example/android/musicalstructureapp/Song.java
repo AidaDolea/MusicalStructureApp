@@ -9,11 +9,13 @@ public class Song {
     private String mArtistName;
     private String mSongName;
     private int mImageResourceId;
+    private int audioResourceId;
 
-    public Song(String artistName, String songName, int imageResourceId) {
+    public Song(String artistName, String songName, int imageResourceId, int audioResourceId) {
         mArtistName = artistName;
         mSongName = songName;
         mImageResourceId = imageResourceId;
+        this.audioResourceId= audioResourceId;
     }
 
     public String getmArtistName() {
@@ -28,5 +30,10 @@ public class Song {
     public int getmResourceImageId() {
 
         return mImageResourceId;
+    }
+
+    public int getAudioRsourceId(){
+
+        return audioResourceId;
     }
 }
