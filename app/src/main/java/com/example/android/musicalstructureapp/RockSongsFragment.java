@@ -54,7 +54,7 @@ public class RockSongsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.rock_songs, container, false);
+        View rootView = inflater.inflate(R.layout.list, container, false);
         mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
         final ArrayList<Song> songs = new ArrayList<Song>();
